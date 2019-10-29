@@ -4,7 +4,7 @@
 
 long long giaTriLonNhat(char number[]);
 int soLonNhatTrongChuoiSo(char number[]);
-int chuyenSoThanhChuoi(char number);
+int chuyenChuoiThanhSo(char number);
 
 int main()
 {
@@ -38,7 +38,7 @@ long long giaTriLonNhat(char number[])
 	for(int i=0; i<=strlen(number); i++)
 	{
 		chiSoTam = 0;
-		if(chuyenSoThanhChuoi(number[i]) == max)
+		if(chuyenChuoiThanhSo(number[i]) == max)
 		{	
 			for(int j = i; j<strlen(number) + i; j++)
 			{
@@ -58,16 +58,16 @@ long long giaTriLonNhat(char number[])
 //atoi: chuyen chuoi thanh so
 int soLonNhatTrongChuoiSo(char number[])
 {
-	int max = chuyenSoThanhChuoi(number[0]);	
+	int max = chuyenChuoiThanhSo(number[0]);	
 	for(int i=0; i < strlen(number); i++)
 	{
-		if(chuyenSoThanhChuoi(number[i]) > max)
-			max = chuyenSoThanhChuoi(number[i]);
+		if(chuyenChuoiThanhSo(number[i]) > max)
+			max = chuyenChuoiThanhSo(number[i]);
 	}
 	return max;
 }
 
-int chuyenSoThanhChuoi(char number)
+int chuyenChuoiThanhSo(char number)
 {
 	return (int)number - 48;
 }
